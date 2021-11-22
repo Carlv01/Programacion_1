@@ -19,10 +19,11 @@ La Clase solicitada debe ser instanciada y sus metodos invocados para verificar 
 from abc import(ABC, abstractmethod)
 
 class Documento(ABC):
-    def __init__(self,nombre,apellidos,sexo):
+    def __init__(self,nombre,apellidos,sexo,ciudad):
         self.__nombre = nombre
         self.__apellidos = apellidos
         self.__sexo = sexo
+        self.__ciudad = ciudad
 
 
     @abstractmethod
@@ -30,7 +31,9 @@ class Documento(ABC):
          pass
 
     def MostrarDatosDeLaPersona(self):
-        print("La persona:", self.__nombre, self.__apellidos, "De sexo", self.__sexo)
+        print("La persona:", self.__nombre, self.__apellidos, "De sexo", self.__sexo, "Nacido en",self.__ciudad)
+
+
 
 
 
@@ -62,14 +65,9 @@ class Defuncion(Documento):
         print("Tiene como fecha de registro del acta de defuncion(fallecimiento), en el año", self.__Fdefuncion)
 
 
-
-
-
-
-
 print("Bienvenido al Registro Público")
 print("Ingrese los datos de la persona")
-persona1 = Nacimiento("Carlos","vargas Rivas","Masculino")
+persona1 = Nacimiento("Carlos","vargas Rivas","Masculino","Barquisimeto")
 persona1.MostrarDatosDeLaPersona()
 persona1.IngresarFechaDeNacimiento(2000)
 persona1.MostrarFechaDelRegistro()
@@ -78,9 +76,9 @@ print()
 
 print("Bienvenido al Registro Público")
 print("Ingrese los datos de la persona")
-persona2 = Defuncion("Jose","Perez Mendoza","Masculino")
+persona2 = Defuncion("Jose","Perez Mendoza","Masculino","Caracas")
 persona2.MostrarDatosDeLaPersona()
-persona2.IngresarFechaDeDefuncion(1995)
+persona2.IngresarFechaDeDefuncion(2012)
 persona2.MostrarFechaDelRegistro()
 
 
